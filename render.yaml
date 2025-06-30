@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: clickup-agent
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: CLICKUP_API_TOKEN
+        value: pk_200493732_TQSTRPR2GOD0GTNOFEWIRVCHR127ZIBY
+      - key: CLICKUP_WORKSPACE_ID
+        value: 90131539337
+      - key: CLICKUP_SPACE_ID
+        value: 90136445296
+      - key: CLICKUP_FOLDER_ID
+        value: 90138204864
+      - key: RESPONSIBLE_VICTOR
+        value: 200493732
+      - key: RESPONSIBLE_ANGELO
+        value: 206512589
+      - key: RESPONSIBLE_GIORGIA
+        value: 99908367
+      - key: RESPONSIBLE_KELLY
+        value: 200544020
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
